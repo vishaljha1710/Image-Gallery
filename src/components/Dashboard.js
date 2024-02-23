@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import images from "./Gallery";
+import AddImages from "./AddImages";
 import Card from "./Card";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
@@ -11,11 +12,10 @@ export default function Dashboard() {
   } else {
     initialItems = images;
   }
-  const [items, setitems] = useState(initialItems);
-  localStorage.setItem("images", JSON.stringify(items));
+  const [items, setItems] = useState(initialItems);
 
-  const dndhandler = (results) => {
-    const { source, destination, type } = results;
+  const dndHandler = (results) => {
+    const { source, destination } = results;
     if (!destination) return;
     if (
       source.droppableId === destination.droppableId &&
@@ -26,46 +26,80 @@ export default function Dashboard() {
     const reordered = [...items];
     const [removed] = reordered.splice(source.index, 1);
     reordered.splice(destination.index, 0, removed);
-    setitems(reordered);
-    localStorage.setItem("images", JSON.stringify(items));
-
-    console.log(items);
-    return;
+    setItems(reordered);
+    localStorage.setItem("images", JSON.stringify(reordered));
   };
 
   return (
-    <div className="container">
-      <DragDropContext onDragEnd={dndhandler}>
+    <div>
+      <div className="parentadd">
+        <AddImages setItems={setItems} />
+      </div>
+      <div className="container">
         <div className="row">
-          <Droppable droppableId="root">
-            {(provided) => (
-              <div
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-                className="row"
-              >
-                {items.map((elem, index) => (
-                  <Draggable draggableId={elem.id} key={elem.id} index={index}>
-                    {(provided) => (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        key={elem.id}
-                        className="col-lg-4 col-md-6 col-sm-12 my-3"
-                      >
-                        <Card Img={elem.source} />
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
-
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
+          <div className="col">
+            <DragDropContext onDragEnd={dndHandler}>
+              <Droppable droppableId="root">
+                {(provided) => (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                    className="row"
+                  >
+                    {items.map((elem, index) => {
+                      if (elem.id === "1" || elem.id === "8") {
+                        return (
+                          <Draggable
+                            draggableId={elem.id}
+                            key={elem.id}
+                            index={index}
+                          >
+                            {(provided) => (
+                              <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                className="col-lg-12 col-md-12 my-2"
+                              >
+                                <img
+                                  src={elem.source}
+                                  alt={elem.id}
+                                  style={{ borderRadius: "0.5rem" }}
+                                  className="img-fluid"
+                                />
+                              </div>
+                            )}
+                          </Draggable>
+                        );
+                      } else {
+                        return (
+                          <Draggable
+                            draggableId={elem.id}
+                            key={elem.id}
+                            index={index}
+                          >
+                            {(provided) => (
+                              <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                className="col-lg-6 col-md-12 my-2"
+                              >
+                                <Card Img={elem.source} />
+                              </div>
+                            )}
+                          </Draggable>
+                        );
+                      }
+                    })}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+          </div>
         </div>
-      </DragDropContext>
+      </div>
     </div>
   );
 }

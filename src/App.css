@@ -1,3 +1,27 @@
+.add {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 3rem;
+  width: 55rem;
+  height: 2rem;
+  box-shadow: 0 0 8px rgba(0.1, 0.1, 0.1, 0.1);
+}
+.add:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+}
+.parentadd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body {
+  background-color: black;
+}
 .App {
   text-align: center;
 }
