@@ -1,38 +1,50 @@
-.add {
-  margin: 0.7rem;
+/* Common styles for both .add and .nothing */
+.add,
+.nothing {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%; /* Set a relative width */
+  max-width: 55rem; /* Limit maximum width */
+  margin: 0.7rem auto; /* Center horizontally with a small margin */
+}
+
+.add {
+  height: 2rem;
   background-color: white;
   border-radius: 3rem;
-  width: 55rem;
-  height: 2rem;
   box-shadow: 0 0 8px rgba(0.1, 0.1, 0.1, 0.1);
 }
+
+.parentadd {
+  display: flex;
+  flex-direction: column;
+}
+
+.nothing {
+  height: 30rem;
+  background-color: lightgray;
+  border-radius: 1rem;
+  color: black;
+  text-align: center;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .add,
+  .nothing {
+    width: 95%; /* Adjust width for smaller screens */
+    max-width: none; /* Remove maximum width */
+    margin: 0.5rem auto; /* Adjust margin for smaller screens */
+  }
+}
+
 .add:hover {
   transform: scale(1.06);
   cursor: pointer;
 }
-.parentadd {
-  display: flex;
-  flex-direction: column; /* Set flex direction to column */
-  justify-content: center;
-  align-items: center;
-}
 body {
   background-color: black !important; /* Ensure that this style takes precedence */
-}
-.nothing {
-  margin: 2rem auto; /* Vertical margin of 2rem and horizontal margin auto */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: lightgray;
-  border-radius: 1rem;
-  width: 55rem;
-  height: 30rem;
-  color: black;
-  text-align: center; /* Justify the text */
 }
 
 .App {
