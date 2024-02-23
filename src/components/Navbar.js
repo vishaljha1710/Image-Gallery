@@ -32,13 +32,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  About
-                </a>
-              </li>
-            </ul>
+            <ul className="navbar-nav"></ul>
           </div>
         </div>
       </nav>
