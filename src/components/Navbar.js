@@ -1,6 +1,11 @@
 import React from "react";
 
 export default function Navbar() {
+  const handleResetPage = () => {
+    localStorage.clear(); // Clears the local storage
+    window.location.reload(); // Reloads the page
+  };
+
   return (
     <div>
       <nav
@@ -8,9 +13,13 @@ export default function Navbar() {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Home
-          </a>
+          <span
+            style={{ cursor: "pointer" }}
+            className="navbar-brand"
+            onClick={handleResetPage}
+          >
+            Reset Page
+          </span>
           <button
             className="navbar-toggler"
             type="button"

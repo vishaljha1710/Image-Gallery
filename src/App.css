@@ -1,5 +1,5 @@
 .add {
-  margin: 2rem;
+  margin: 0.7rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,13 +15,26 @@
 }
 .parentadd {
   display: flex;
+  flex-direction: column; /* Set flex direction to column */
   justify-content: center;
   align-items: center;
 }
-
-.body {
-  background-color: black;
+body {
+  background-color: black !important; /* Ensure that this style takes precedence */
 }
+.nothing {
+  margin: 2rem auto; /* Vertical margin of 2rem and horizontal margin auto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 1rem;
+  width: 55rem;
+  height: 30rem;
+  color: black;
+  text-align: center; /* Justify the text */
+}
+
 .App {
   text-align: center;
 }
