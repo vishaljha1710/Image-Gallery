@@ -4,7 +4,7 @@ export default function Card({ Img }) {
   return (
     <div>
       <div
-        className="bg-success m-3 d-flex align-items-center justify-content-center"
+        className="bg-offwhite m-3 d-flex align-items-center justify-content-center"
         style={{
           width: "100%",
           maxWidth: "30rem",
@@ -12,6 +12,7 @@ export default function Card({ Img }) {
           margin: "0 auto",
           aspectRatio: "1 / 1",
           borderRadius: "10%",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         }}
       >
         <img
