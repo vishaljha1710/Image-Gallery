@@ -32,7 +32,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav"></ul>
+            <ul className="navbar-nav"><a href="https://github.com/vishaljha1710" style={{textDecoration:'none'}}>Visit my github</a></ul>
           </div>
         </div>
       </nav>
