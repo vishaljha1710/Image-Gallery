@@ -1,71 +1,82 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-live server: https://brilliant-pavlova-d35761.netlify.app/
+# Image Gallery 
 
-## Available Scripts
+This is a simple React application for managing and displaying a gallery of images with drag and drop functionality. It allows users to add new images, rearrange them using drag and drop, and view them in a responsive grid layout.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Add new images by uploading files
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![image](https://github.com/vishaljha1710/Image-Gallery/assets/77543816/05a14629-bac6-4d09-82fa-f1b0fb74d8c1)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  
+- Drag and drop to rearrange images
 
-### `npm test`
+![image](https://github.com/vishaljha1710/Image-Gallery/assets/77543816/423d0cef-d2ab-4116-bd7a-6b3ff85e0b46)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
+- Different layouts for specific images
+- Your gallery with your custom layout will be saved to your device to open same as you left
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- react-beautiful-dnd
+- Local Storage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run this project locally, follow these steps:
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   git clone https://github.com/your-username/dashboard-image-gallery.git
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Navigate to the project directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   cd dashboard-image-gallery
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install the dependencies:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Start the development server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm start
+   ```
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Adding Images
 
-### Analyzing the Bundle Size
+1. Click the "Add Module" button to open the file picker.
+2. Select an image file from your computer.
+3. The image will be added to the gallery.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Rearranging Images
 
-### Making a Progressive Web App
+1. Click and drag an image to rearrange its position within the gallery.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Adding All Modules
 
-### Advanced Configuration
+1. Click the "Add all modules" button to add all predefined modules to the gallery.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Local Storage
 
-### Deployment
+The application uses Local Storage to persist the image gallery. When you add or rearrange images, the changes are saved to the browser's Local Storage. If you refresh the page or reopen the application, the images will still be displayed in the same order.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+Feel free to customize this README to better fit the specifics of your project or to include any additional information you find relevant!
